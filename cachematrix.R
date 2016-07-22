@@ -1,7 +1,13 @@
-## Put comments here that give an overall description of what your
-## functions do
+## 'makeCacheMatrix' exposes accessor methods for caching the argument 'x'
+## 'cacheSolve' makes use of accessor methods of 'makeCacheMatrix' function
+## and returns the inversed matrix.
 
-## Write a short comment describing this function
+## makeCacheMatrix function enables accessors methods for 'x' variable
+## exposing a getter and setter function. The 'set' function uses
+## '<<-' operator to assign 'x' to a different environment. The 'get' 
+## function returns the value of 'x'. The function 'getsolve' returns 
+## the value of variable 'm'. The function 'setsolve' uses '<<-'
+## operator to assign 'x' to a different environment. 
 
 makeCacheMatrix <- function(x = matrix()) {
             m <- NULL
@@ -18,8 +24,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## 'cacheSolve' function makes use of 'getsolve', 'setsolve' and 'set'
+## functions of makeCacheMatrix to get and set the cache for variable 'm'.
+## It's also in charge of implementing the function 'solve' for reversing the matrix
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
             m <- x$getsolve()
